@@ -7,11 +7,22 @@ import { useFormStatus } from "react-dom";
 export default function Form({ userId }: { userId: string }) {
   const [state, action] = useActionState(updateNameAction, {
     userId,
+    name: "",
+    message: "",
   });
+
+  if (state.message === "success") {
+    // do something after submit success
+  }
 
   return (
     <form action={action}>
-      <input className="p-2 border-2" type="text" name="name" />
+      <input
+        defaultValue={state.name}
+        className="p-2 border-2"
+        type="text"
+        name="name"
+      />
       <SubmitButton />
     </form>
   );
