@@ -5,7 +5,7 @@
 ### 1. 'use client'放在了组件树中太高的位置。
 
 **背景**  
- nextjs 项目/src/app 目录下的所有页面和组件默认时 server componenet, 如果想要使用 react 的 hook 或者浏览器事件，则要声明成 client component.
+ nextjs 项目/app 目录下的所有页面和组件默认时 server componenet, 如果想要使用 react 的 hook 或者浏览器事件，则要声明成 client component.
 
 **问题**  
  "use client"放太高，导致不仅声明的组件本身，还有 import 进来的其他组件都变成 client component，从而丢失了 server component 的优点（如性能优化）
